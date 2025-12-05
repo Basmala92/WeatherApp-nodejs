@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300;1,400;1,600&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/style.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"/>
+</head>
+<body>
+
+<div class="main-wrapper">
+    <div class="container">
+        <h1>Weather App</h1>
+
+        <form action="/weather" method="get">
+            <input type="text" name="city" placeholder="Enter city name..." autocomplete="off"/>
+            <button type="submit">Search</button>
+        </form>
+
+        <% if (error) { %>
+            <div class="result-box error">
+                <p><%= error %></p>
+            </div>
+        <% } else if (weather) { %>
+            <div class="result-box">
+                <div class="weather-item">
+                    <i class="fas fa-thermometer-half"></i>
+                    <span><%= weather.main.temp %>&deg;F</span>
+                </div>
+                <div class="weather-item">
+                    <i class="fas fa-cloud"></i>
+                    <span><%= weather.weather[0].main %></span>
+                </div>
+                <div class="weather-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span><%= weather.name %>, <%= weather.sys.country %></span>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+</body>
+</html>
