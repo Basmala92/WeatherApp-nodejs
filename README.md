@@ -4,6 +4,10 @@ A simple app built with node.js ,express and EJS.
 
 It fetches real-time weather data using the OpenWeatherMap API
 
+## 🔗 Live Demo
+
+**[Click here to see the website live!](https://weatherapp-nodejs-u4di.onrender.com/)**
+
 ## Tech Stack
 
 * **Backend:** Node.js, Express
